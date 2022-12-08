@@ -2,15 +2,38 @@ import pandas as pd  # data processing -> CSV file I/O
 import numpy as np  # linear algebra
 from scipy import spatial
 import matplotlib.pyplot as plt  # for data visualization
-from sklearn.neighbors import KNeighborsClassifier
+# from sklearn.neighbors import KNeighborsClassifier
 
 
-def ComputeDistance(a, b):
-    return
+class KNearestNeighbors:
+    def __init__(self, k) -> None:
+        self.k = k
 
+    def __init__(self, k, x_data, y_data) -> None:
+        self.k = k
+        self.x_data = x_data
+        self.y_data = y_data
 
-def getNeighbors(target, count):
-    return
+    def set_k(self, k) -> None:
+        self.k = k
+
+    def set_data(self, x_data, y_data) -> None:
+        self.x_data = x_data
+        self.y_data = y_data
+
+    def get_distance(self, target_x, target_y) -> None:
+        self.distances = []
+
+        for i in self.x_data:
+            distance = np.sqrt(
+                ((target_x - self.x_data[i]) ** 2) +
+                ((target_y - self.y_data[i]) ** 2)
+            )
+            self.distances.append(distance)
+
+    def predict(self, target_x, target_y) -> int:
+
+        return 0
 
 
 # load dataset CSV file
@@ -41,7 +64,7 @@ selected_id = 0
 
 print("")
 
-neighbors = getNeighbors(selected_id, nearest_k)
+neighbors = []
 
 for neighbor in neighbors:
     print(
