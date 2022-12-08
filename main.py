@@ -1,23 +1,27 @@
-import operator
-import pandas as pd
-import numpy as np
+import pandas as pd  # data processing -> CSV file I/O
+import numpy as np  # linear algebra
 from scipy import spatial
+import matplotlib.pyplot as plt  # for data visualization
+from sklearn.neighbors import KNeighborsClassifier
 
-def ComputeDistance(a,b):
+
+def ComputeDistance(a, b):
     return
 
-def getNeighbors(,):
+
+def getNeighbors(target, count):
     return
+
 
 # load dataset CSV file
-url = 'https://raw.githubusercontent.com/whitestorm2346/neural-network/main/train.csv'
-pd_df = pd.read_csv(url)
+DATA_SET_URL = 'https://raw.githubusercontent.com/whitestorm2346/neural-network/main/train.csv'
+pd_df = pd.read_csv(DATA_SET_URL)
 
 # data frame for entity name and ID
-pd_df0 = 
+pd_df0 = 0
 
 # data frame for attributes
-pd_df1 = 
+pd_df1 = 0
 
 # convert to 0s and 1s based on the attribute values
 pd_df1 = pd_df.iloc[:, [0, 2]]
@@ -32,17 +36,17 @@ carDict = {}
 for d in df_array:
     pass
 
-K = 
-selectedID = 
+nearest_k = 0  # k個最接近你的鄰居
+selected_id = 0
 
-print("", )
+print("")
 
-neighbors = getNeighbors(selectedID, K)
+neighbors = getNeighbors(selected_id, nearest_k)
 
 for neighbor in neighbors:
     print(
-        str(neighbor[0]) + " | " 
-        + carDict[neighbor[0]][0] + " | " 
+        str(neighbor[0]) + " | "
+        + carDict[neighbor[0]][0] + " | "
         + str(neighbor[1])
     )
 

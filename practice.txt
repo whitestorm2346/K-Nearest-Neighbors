@@ -1,0 +1,16 @@
+本次作業僅練習，不計分，
+
+#期末作業計分方式
+1.期末作業會以"個人打分"的方式進行(隊友沒辦法現場幫你)，所以如果程式不是完全由同學自己著手寫得，請務必要絕對清楚了解程式架構
+2.同學若使用"KNN套件(EX：sklearn)"來撰寫程式"分數會打折"，如是運用以自己了解的KNN算法來撰寫分數則較高，且有使用matplotlib套件附上圖示可額外加分(但要詳細解釋圖示內容才算)
+3.資料集期末作業開放時會一起附上
+
+其他作業驗收日期12/30為最後期限(正課老師要求)，請同學把握課堂上的驗收時間喔~~~~!祝同學好運\^o^/
+
+參考網站：
+https://godamber.blogspot.com/2019/07/pythoncolab.html(資料集讀取方式，若同學使用colab以外的編譯器需自行搜尋CSV檔案讀取方法)
+https://ithelp.ithome.com.tw/articles/10269826?sc=iThelpR(簡易KNN(有使用套件))
+https://www.w3schools.com/python/python_ml_knn.asp(簡易KNN(有使用套件，且有圖示))
+https://www.kaggle.com/code/prashant111/knn-classifier-tutorial/notebook(比較正規的KNN資料分析，較難)
+
+如以上參考網站同學覺得還是不足也能自行搜尋相關資料
