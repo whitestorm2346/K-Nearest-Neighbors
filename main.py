@@ -10,7 +10,7 @@ def getNeighbors(,):
     return
 
 # load dataset CSV file
-url = 'plz copy paste  your dataset url'
+url = 'https://raw.githubusercontent.com/whitestorm2346/neural-network/main/train.csv'
 pd_df = pd.read_csv(url)
 
 # data frame for entity name and ID
