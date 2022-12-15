@@ -1,7 +1,7 @@
 import operator
 import pandas as pd
 import numpy as np
-from scipy import spatial
+from scipy import spatial 
 import matplotlib.pyplot as plt  # for data visualization
 
 # load dataset CSV file
@@ -9,30 +9,33 @@ DATA_SET_URL = 'https://raw.githubusercontent.com/yfujieda/tech-cookbook/master/
 data_set = pd.read_csv(DATA_SET_URL)
 
 
-def ComputeDistance(a, b):
-    dataA = a[1]
-    dataB = b[1]
+def ComputeDistance(cars_info_a, cars_info_b):
+    # 0 and 1 attributes list
+    cars_attributes_a = cars_info_a[1] # multi-dimension coordinate
+    cars_attributes_b = cars_info_b[1] # multi-dimension coordinate
 
-    AttributeDistance = spatial.distance.cosine(dataA, dataB)
+    distance = spatial.distance.cosine(cars_attributes_a, cars_attributes_b) 
+    # compute two dots' distance
 
-    return AttributeDistance
+    return distance
 
 
-def getNeighbors(id, k):
+def getNeighbors(selected_index, k):
     global car_dict
 
     distances = []
-    neighbors = []
 
     for car in car_dict:
-        if car != id:
-            dist = ComputeDistance(car_dict[id], car_dict[car])
-            distances.append((car, dist))
+        if car != selected_index:
+            distance = ComputeDistance(car_dict[selected_index], car_dict[car])
+            distances.append((car, distance))
 
-    distances.sort(key=operator.itemgetter(1))
+    distances.sort(key=operator.itemgetter(1)) # use value[1] to sort the list
 
-    for x in range(k):
-        neighbors.append((distances[x][0], distances[x][1]))
+    neighbors = []
+
+    for i in range(k): # get k neighbors for result list
+        neighbors.append((distances[i][0], distances[i][1]))
 
     return neighbors
 
@@ -88,3 +91,4 @@ for neighbor in neighbors:
     model_value = neighbor[1]
 
     print("%d | %s | %.3f" % (model_index, model_name, model_value))
+    # print(car_dict[model_index][1], end='\n\n')
